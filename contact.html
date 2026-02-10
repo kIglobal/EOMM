@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EOMM Sri Lanka Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6B21A8',
+                        secondary: '#F3E8FF',
+                        accent: '#DB2777',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img class="h-10 w-auto" src="assets/images/logo.png" alt="KI Global Logo">
+                        <span class="ml-3 font-bold text-xl text-primary hidden md:block">EOMM Sri Lanka</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="index.html#features"
+                            class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Features</a>
+                        <a href="order.html"
+                            class="bg-primary hover:bg-purple-900 text-white px-5 py-2 rounded-full text-sm font-medium transition shadow-lg transform hover:scale-105">Buy
+                            Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-800 to-indigo-900 py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">Get in Touch</h1>
+            <p class="mt-4 text-xl text-purple-200">Have questions about the book or bulk orders?</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-grow container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+            <!-- Contact Info -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Address</h3>
+                            <p class="mt-1 text-gray-500">
+                                KI Global Academy of Marketing<br>
+                                No. 45, Alfred House Gardens,<br>
+                                Colombo 03, Sri Lanka.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Phone</h3>
+                            <p class="mt-1 text-gray-500">+94 11 234 5678</p>
+                            <p class="mt-1 text-gray-500">+94 77 123 4567 (Mobile)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Email</h3>
+                            <p class="mt-1 text-gray-500">info@kiglobal.com</p>
+                            <p class="mt-1 text-gray-500">orders@kiglobal.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fake Map or Image -->
+            <div class="bg-gray-200 rounded-lg shadow-lg overflow-hidden h-96 relative">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.56436265697!2d79.80373752528717!3d6.927078635887268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1645516900000!5m2!1sen!2sus"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-auto">
+        <div class="max-w-7xl mx-auto py-8 px-4 text-center sm:px-6 lg:px-8">
+            <p class="text-gray-400 text-sm">&copy; 2026 KI Global Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

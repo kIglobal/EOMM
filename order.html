@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - EOMM Sri Lanka Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6B21A8',
+                        secondary: '#F3E8FF',
+                        accent: '#DB2777',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img class="h-12 w-auto" src="assets/images/logo.png" alt="KI Global Logo">
+                        <span class="ml-3 font-bold text-xl text-primary hidden md:block">EOMM Sri Lanka</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="index.html#about"
+                            class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">About
+                            Book</a>
+                        <a href="order.html"
+                            class="bg-primary hover:bg-purple-900 text-white px-5 py-2 rounded-full text-sm font-medium transition shadow-lg">Buy
+                            Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex-grow pt-32 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white shadow-2xl rounded-2xl overflow-hidden">
+                <div class="bg-gradient-to-r from-purple-800 to-indigo-900 px-8 py-6">
+                    <h2 class="text-3xl font-bold text-white text-center">Order Your book</h2>
+                    <p class="text-purple-200 text-center mt-2">Fill in the details below to complete your purchase.</p>
+                </div>
+
+                <form id="orderForm" class="px-8 py-8 space-y-6">
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-user text-gray-400"></i>
+                            </div>
+                            <input type="text" name="name" id="name" required
+                                class="focus:ring-primary focus:border-primary block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-3"
+                                placeholder="John Doe">
+                        </div>
+                    </div>
+
+                    <!-- Mobile -->
+                    <div>
+                        <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile Number</label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-phone text-gray-400"></i>
+                            </div>
+                            <input type="tel" name="mobile" id="mobile" required
+                                class="focus:ring-primary focus:border-primary block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-3"
+                                placeholder="+94 7X XXX XXXX">
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div>
+                        <label for="address" class="block text-sm font-medium text-gray-700">Delivery Address</label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 pt-3 pointer-events-none">
+                                <i class="fas fa-map-marker-alt text-gray-400"></i>
+                            </div>
+                            <textarea id="address" name="address" rows="3" required
+                                class="focus:ring-primary focus:border-primary block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-3"
+                                placeholder="No. 123, Galle Road, Colombo 03"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Payment Slip Upload -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Upload Payment Slip</label>
+                        <div class="flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md hover:border-primary transition cursor-pointer"
+                            id="drop-area">
+                            <div class="space-y-1 text-center">
+                                <i class="fas fa-file-upload text-4xl text-gray-400 mb-3"></i>
+                                <div class="flex text-sm text-gray-600 justify-center">
+                                    <label for="file-upload"
+                                        class="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-purple-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary">
+                                        <span>Upload a file</span>
+                                        <input id="file-upload" name="file-upload" type="file" class="sr-only" required
+                                            accept="image/*,.pdf">
+                                    </label>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs text-gray-500">
+                                    PNG, JPG, PDF up to 10MB
+                                </p>
+                                <p id="file-name" class="text-sm text-green-600 mt-2 font-semibold hidden"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit"
+                            class="w-full flex justify-center py-4 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-purple-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition transform hover:-translate-y-1 shadow-lg">
+                            Place Order
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed z-50 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                <div>
+                    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                    <div class="mt-3 text-center sm:mt-5">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Order Placed
+                            Successfully!</h3>
+                        <div class="mt-2">
+                            <p class="text-sm text-gray-500">
+                                Thank you for your order. We have received your details and payment slip. We will
+                                contact you shortly for confirmation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 sm:mt-6">
+                    <button type="button" onclick="closeModal()"
+                        class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white hover:bg-purple-800 focus:outline-none sm:text-sm">
+                        Go to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-auto">
+        <div class="max-w-7xl mx-auto py-8 px-4 text-center sm:px-6 lg:px-8">
+            <p class="text-gray-400 text-sm">&copy; 2026 KI Global Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
