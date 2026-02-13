@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy In-Store - Barista Locations | EOMM Sri Lanka</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6B21A8', /* purple-800 */
+                        secondary: '#F3E8FF', /* purple-100 */
+                        accent: '#DB2777', /* pink-600 */
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .header-bg {
+            background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-12 w-auto" src="assets/images/logo.png" alt="KI Global"
+                        onerror="this.onerror=null;this.src='https://via.placeholder.com/150x50?text=EOMM';">
+                    <span class="ml-3 font-bold text-xl text-primary hidden md:block">EOMM Sri Lanka</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="locations.html"
+                            class="text-primary hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition active-link">Store
+                            Locations</a>
+                        <a href="student_offer.html"
+                            class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Student
+                            Offer</a>
+                        <a href="order.html"
+                            class="bg-primary hover:bg-purple-900 text-white px-5 py-2 rounded-full text-sm font-medium transition shadow-lg transform hover:scale-105">Order
+                            Online</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative pt-32 pb-20 overflow-hidden header-bg">
+        <div class="absolute inset-0 bg-purple-900 opacity-70"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center py-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Buy In-Store at Barista</h1>
+            <p class="text-xl text-purple-100 max-w-2xl mx-auto">Skip the shipping! Grab your books of Essentials of
+                Modern Marketing at your nearest Barista outlet across Sri Lanka.</p>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+        <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-10 border border-purple-100 mb-12">
+            <div class="flex flex-col md:flex-row gap-4 items-center">
+                <div class="relative flex-1 w-full">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" id="locationSearch" placeholder="Search by city or outlet name..."
+                        class="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-lg">
+                </div>
+                <div class="flex-shrink-0 w-full md:w-auto">
+                    <button id="findNearby"
+                        class="w-full bg-accent hover:bg-pink-700 text-white px-8 py-4 rounded-xl font-bold transition flex items-center justify-center">
+                        <i class="fas fa-location-arrow mr-2"></i> Find Nearest
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Locations Grid -->
+        <div id="locationsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
+            <!-- Location Card Example -->
+            <script>
+                const locations = [
+                    { name: 'Ahangama', address: 'Infront of police, Ahangama 80650', map: 'https://maps.app.goo.gl/8w1EffRZZydVJJas8' },
+                    { name: 'Athurugiriya – Express', address: '311, Borella Road, Athurugiriya', map: 'https://maps.app.goo.gl/v5SrSiYvnmoj1HtPA' },
+                    { name: 'Bambalapitiya', address: 'Pizza Hut Premises, # 7/2, Station road, Colombo 04', map: 'https://maps.app.goo.gl/k6NqggWZQUSWzTw66' },
+                    { name: 'Bandaranaike International Airport', address: 'C Shop #66/D, Katunayake', map: 'https://maps.app.goo.gl/3BG5hZTsZppCXnVTA' },
+                    { name: 'Bandarawela – Express', address: '7 CargillsSquare Welimada Rd, Bandarawela', map: 'https://maps.app.goo.gl/Wmv7YDMmCU88deYg6' },
+                    { name: 'Battaramulla', address: '16/2A Main St, Battaramulla 10120', map: 'https://maps.app.goo.gl/YDuQfaGR5HoRBRtUA' },
+                    { name: 'Boralesgamuwa', address: '129/2 90, Katuwawala Road, Boralesgamuwa', map: 'https://maps.app.goo.gl/NFB4U9BYvLoMcn2DA' },
+                    { name: 'Café Mocha by Barista', address: '28, Stafford Avenue, Colombo 06', map: 'https://maps.app.goo.gl/zZurDVT5pFyth36SA' },
+                    { name: 'Cool Planet Narahenpita', address: 'No.193, Kirula Road, Colombo 05', map: 'https://maps.app.goo.gl/ZFbHmkoCd9gpuu4R8' },
+                    { name: 'Kurunegala', address: 'PWDR Cafe (pvt). Ltd, Yaggapitiya, Dambulla Rd', map: 'https://maps.app.goo.gl/UsBa7q5sbb8inG4e6' },
+                    { name: 'Dehiwala', address: '35, Hill Street, Dehiwala', map: 'https://maps.app.goo.gl/dxnux9urve7mzcZM9' },
+                    { name: 'Delkanda', address: 'No 601, Delkanda, Nugegoda 10250', map: 'https://maps.app.goo.gl/bpxVP44AyEb6aPEKA' },
+                    { name: 'Double XL', address: 'Dbl XL, No 108, Reid Avenue, Colombo 7', map: 'https://maps.app.goo.gl/Z9qk1JXWSNNXo4v77' },
+                    { name: 'Ella', address: 'No.01, Ella Junction, Ella', map: 'https://maps.app.goo.gl/HBjb9WCsfR2gza43A' },
+                    { name: 'Ethul Kotte', address: '932/A Kotte Rd, Sri Jayawardenepura, Kotte', map: 'https://maps.app.goo.gl/Z5eSp2fPXF3mXm6j9' },
+                    { name: 'Galle Fort', address: 'No. 53, Pedler’s Street, Galle Fort', map: 'https://maps.app.goo.gl/dczAp7ZToVCUvFq99' },
+                    { name: 'Horana', address: 'No. 249/A/A, Ground Floor, Ratnapura', map: 'https://maps.app.goo.gl/KSPspp9fHLv7qjZG6' },
+                    { name: 'Horton Place', address: 'Alexandra Pl, Colombo 7 (Lanka IOC Station)', map: 'https://maps.app.goo.gl/g42Wt3YepYfNr1vq5' },
+                    { name: 'Independence Arcade', address: 'No. CT/GF/3A, Arcade Square, Colombo 07', map: 'https://maps.app.goo.gl/2BKqoKftz9b5ZBDW7' },
+                    { name: 'Ja-Ela', address: '118 Negombo Rd, Ja-Ela', map: 'https://maps.app.goo.gl/K3M91YgaWQ5uXKS56' },
+                    { name: 'Jaffna Express', address: 'No 420, Hospital Road, Jaffna', map: 'https://maps.app.goo.gl/uEkv6ACvZH11UF16A' },
+                    { name: 'Kadawatha', address: '469B Kandy Rd, Kadawatha 11850', map: 'https://maps.app.goo.gl/kHtu4MmPwdtLjPBy7' },
+                    { name: 'Kandy', address: 'No 498, Peradeniya Road, Kandy', map: 'https://maps.app.goo.gl/CyMwxEkCZuUb9deD9' },
+                    { name: 'Katubedda', address: '239 Galle Rd, Moratuwa', map: 'https://maps.app.goo.gl/a9noiR8gjXEH1fwH6' },
+                    { name: 'Kiribathgoda', address: 'No 91, Ground Floor, Kandy Road', map: 'https://maps.app.goo.gl/n4Qr8b8WSmKEcY1u7' },
+                    { name: 'Kochchikade', address: 'No 63, Chilaw road, Kochchikade', map: 'https://maps.app.goo.gl/AoC86BEN6QQmHigr6' },
+                    { name: 'Kohuwala', address: '129/2 Dutugemunu St, Colombo 10250', map: 'https://maps.app.goo.gl/AoC86BEN6QQmHigr6' }
+                ];
+
+                function renderLocations(filter = '') {
+                    const grid = document.getElementById('locationsGrid');
+                    grid.innerHTML = '';
+
+                    const filtered = locations.filter(loc =>
+                        loc.name.toLowerCase().includes(filter.toLowerCase()) ||
+                        loc.address.toLowerCase().includes(filter.toLowerCase())
+                    );
+
+                    filtered.forEach(loc => {
+                        grid.innerHTML += `
+                            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-500 overflow-hidden border border-gray-100 flex flex-col group">
+                                <div class="p-6 flex-1">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-primary mr-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                            <i class="fas fa-coffee text-xl"></i>
+                                        </div>
+                                        <h3 class="font-bold text-xl text-gray-900">${loc.name}</h3>
+                                    </div>
+                                    <p class="text-gray-500 mb-6 flex items-start">
+                                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                                        <span>${loc.address}</span>
+                                    </p>
+                                </div>
+                                <div class="bg-gray-50 p-4 border-t border-gray-100">
+                                    <a href="${loc.map}" target="_blank" class="flex items-center justify-center w-full py-3 bg-white text-primary border-2 border-primary rounded-xl font-bold hover:bg-primary hover:text-white transition duration-300 shadow-sm">
+                                        <i class="fas fa-directions mr-2"></i> Get Directions
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    if (filtered.length === 0) {
+                        grid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-500">
+                            <i class="fas fa-search text-5xl mb-4 opacity-20"></i>
+                            <p class="text-xl">No outlets found matching your search.</p>
+                        </div>`;
+                    }
+                }
+
+                window.onload = () => {
+                    renderLocations();
+                    document.getElementById('locationSearch').addEventListener('input', (e) => {
+                        renderLocations(e.target.value);
+                    });
+                };
+            </script>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">EOMM Sri Lanka</h3>
+                    <p class="text-gray-400 text-sm">Empowering Sri Lankan marketers with world-class knowledge.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="locations.html" class="hover:text-white">Store Locations</a></li>
+                        <li><a href="order.html" class="hover:text-white">Order Online</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <p class="text-gray-400 text-sm">Email: info@kotleracademy.lk<br>Phone: +94 70 503 0707</p>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+                &copy; 2026 KI Global Academy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
