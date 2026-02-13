@@ -1,9 +1,5 @@
 /**
  * DATABASE CONFIGURATION
- * To make this work "ANIWARYEN", you need to:
- * 1. Go to console.firebase.google.com
- * 2. Create a project and get your "Firebase Config" keys
- * 3. Replace the placeholder below with your actual keys
  */
 
 const firebaseConfig = {
@@ -15,45 +11,50 @@ const firebaseConfig = {
     appId: "YOUR_APP_ID"
 };
 
-// Initialize Firebase (This requires the Firebase SDK scripts in your HTML)
+// detect if keys are still placeholders
+const isConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY" && firebaseConfig.projectId !== "YOUR_PROJECT_ID";
+
 let db = null;
-try {
-    firebase.initializeApp(firebaseConfig);
-    db = firebase.firestore();
-} catch (e) {
-    console.warn("Firebase not initialized. Falling back to LocalStorage.");
+if (isConfigured && typeof firebase !== 'undefined') {
+    try {
+        firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
+    } catch (e) {
+        console.error("Firebase Init Error:", e);
+    }
 }
 
 const DATABASE = {
-    // Save an order to the cloud
+    // Save an order
     async saveOrder(orderData) {
-        console.log("Saving order...", orderData);
-        
-        // 1. Always save to LocalStorage as a backup
-        let localOrders = JSON.parse(localStorage.getItem('eomm_orders') || '[]');
-        localOrders.push(orderData);
-        localStorage.setItem('eomm_orders', JSON.stringify(localOrders));
+        // 1. ALWAYS save to LocalStorage first (Instant local save)
+        try {
+            let localOrders = JSON.parse(localStorage.getItem('eomm_orders') || '[]');
+            localOrders.push(orderData);
+            localStorage.setItem('eomm_orders', JSON.stringify(localOrders));
+        } catch (e) { console.error("Local storage error", e); }
 
-        // 2. Try to save to Cloud (Firebase)
+        // 2. Try Cloud sync only if keys are setup
         if (db) {
             try {
-                // If image is too large, we store a placeholder or use Storage
-                // For now, Firestore handles up to 1MB per document
-                await db.collection("orders").add(orderData);
-                console.log("Saved to Cloud successfully!");
+                // 5 second timeout to prevent hanging on "Processing..."
+                const cloudPromise = db.collection("orders").add(orderData);
+                const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error("Timeout")), 5000));
+
+                await Promise.race([cloudPromise, timeoutPromise]);
                 return true;
             } catch (error) {
-                console.error("Cloud Save Failed:", error);
-                return false;
+                console.error("Cloud connectivity issue:", error);
+                return true; // Still return success because it's in LocalStorage
             }
         }
-        return false;
+
+        return true;
     },
 
-    // Fetch all orders for the Admin Panel
+    // Fetch all orders
     async getOrders(callback) {
         if (db) {
-            // Real-time listener for any device
             db.collection("orders").orderBy("date", "desc")
                 .onSnapshot((querySnapshot) => {
                     const orders = [];
@@ -61,11 +62,15 @@ const DATABASE = {
                         orders.push({ id: doc.id, ...doc.data() });
                     });
                     callback(orders);
+                }, (error) => {
+                    console.error("Cloud read error:", error);
+                    // Fallback to local on error
+                    const localOrders = JSON.parse(localStorage.getItem('eomm_orders') || '[]');
+                    callback(localOrders.reverse());
                 });
         } else {
-            // Fallback to local if no cloud setup
             const localOrders = JSON.parse(localStorage.getItem('eomm_orders') || '[]');
-            callback(localOrders.reverse());
+            callback(localOrders.slice().reverse());
         }
     }
 };
