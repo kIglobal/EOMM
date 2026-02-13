@@ -78,31 +78,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 try {
-                    let orders = JSON.parse(localStorage.getItem('eomm_orders') || '[]');
-                    orders.push(studentOrder);
-                    localStorage.setItem('eomm_orders', JSON.stringify(orders));
+                    // Send to Cloud Database
+                    DATABASE.saveOrder(studentOrder).then(success => {
+                        console.log("Student Cloud sync result:", success);
 
-                    setTimeout(() => {
-                        if (studentSuccessModal) studentSuccessModal.classList.remove('hidden');
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                        studentOrderForm.reset();
-                        if (studentFileNameDisplay) studentFileNameDisplay.classList.add('hidden');
-                    }, 500);
+                        setTimeout(() => {
+                            if (studentSuccessModal) studentSuccessModal.classList.remove('hidden');
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                            studentOrderForm.reset();
+                            if (studentFileNameDisplay) studentFileNameDisplay.classList.add('hidden');
+                        }, 500);
+                    });
 
                 } catch (err) {
-                    console.error("Storage Full", err);
-                    alert("Order details saved! Please show your Student ID when collecting.");
-
-                    let orders = JSON.parse(localStorage.getItem('eomm_orders') || '[]');
-                    studentOrder.slipImage = null;
-                    orders.push(studentOrder);
-                    try { localStorage.setItem('eomm_orders', JSON.stringify(orders)); } catch (e) { }
-
-                    if (studentSuccessModal) studentSuccessModal.classList.remove('hidden');
+                    console.error("Submission Error", err);
+                    alert("Something went wrong. Please check your internet connection.");
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
-                    studentOrderForm.reset();
                 }
             };
 

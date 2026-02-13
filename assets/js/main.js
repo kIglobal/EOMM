@@ -61,35 +61,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 try {
-                    let orders = JSON.parse(localStorage.getItem('eomm_orders') || '[]');
-                    orders.push(orderData);
-                    localStorage.setItem('eomm_orders', JSON.stringify(orders));
+                    // Using the new DATABASE helper for Cloud Sync
+                    DATABASE.saveOrder(orderData).then(success => {
+                        console.log("Cloud sync result:", success);
 
-                    // Success
-                    setTimeout(() => {
-                        if (successModal) successModal.classList.remove('hidden');
-                        btn.textContent = originalText;
-                        btn.disabled = false;
-                        orderForm.reset();
-                        if (fileNameDisplay) fileNameDisplay.classList.add('hidden');
-                    }, 500);
+                        setTimeout(() => {
+                            if (successModal) successModal.classList.remove('hidden');
+                            btn.textContent = originalText;
+                            btn.disabled = false;
+                            orderForm.reset();
+                            if (fileNameDisplay) fileNameDisplay.classList.add('hidden');
+                        }, 500);
+                    });
 
                 } catch (err) {
-                    console.error("Storage Full", err);
-                    alert("Order saved, but the image was too large for browser storage.");
-
-                    let orders = JSON.parse(localStorage.getItem('eomm_orders') || '[]');
-                    orderData.slipImage = null; // Removed image
-                    orders.push(orderData);
-                    localStorage.setItem('eomm_orders', JSON.stringify(orders));
-
-                    setTimeout(() => {
-                        if (successModal) successModal.classList.remove('hidden');
-                        btn.textContent = originalText;
-                        btn.disabled = false;
-                        orderForm.reset();
-                        if (fileNameDisplay) fileNameDisplay.classList.add('hidden');
-                    }, 500);
+                    console.error("Submission Error", err);
+                    alert("Something went wrong. Please check your internet connection.");
+                    btn.textContent = originalText;
+                    btn.disabled = false;
                 }
             };
 
