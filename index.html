@@ -284,46 +284,73 @@
         </div>
     </footer>
 
+    <!-- Floating Call Button -->
+    <div class="fixed bottom-0 left-0 m-4 z-40 animate-bounce-slow">
+        <a href="tel:+94761185956" class="flex items-center group">
+            <div
+                class="bg-green-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-green-600 transition-all duration-300 transform group-hover:scale-110 relative">
+                <i class="fas fa-phone-alt text-xl"></i>
+                <span
+                    class="absolute left-full ml-3 bg-white text-green-600 px-3 py-1 rounded-lg shadow-md font-bold text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-green-100">
+                    More info? Contact Us
+                </span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Barista Discount Promo Banner -->
+    <div class="fixed bottom-0 right-0 m-4 z-40 promo-banner max-w-sm w-full">
+        <a href="locations.html" class="block">
+            <div
+                class="banner-orange rounded-2xl shadow-2xl p-5 flex items-center transform transition hover:scale-105 cursor-pointer border-4 border-white animate-pulse-glow">
+                <div class="flex-shrink-0 bg-white rounded-full p-4 shadow-lg">
+                    <i class="fas fa-gift text-3xl text-[#f37021]"></i>
+                </div>
+                <div class="ml-5">
+                    <h3 class="text-white font-extrabold text-xl leading-tight">MEGA DISCOUNT!</h3>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-white/70 line-through text-sm">6000 LKR</span>
+                        <span class="shimmer-text text-2xl font-black italic">5000 LKR</span>
+                    </div>
+                    <p class="text-white text-xs mt-1 font-medium opacity-90 underline">Exclusive at Barista Outlets</p>
+                </div>
+                <div class="ml-auto">
+                    <div class="bg-white/20 p-2 rounded-full">
+                        <i class="fas fa-arrow-right text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Valentine Modal Overlay -->
+    <div id="valentineModal" class="valentine-modal-overlay">
+        <div class="valentine-modal-content">
+            <div class="close-valentine" onclick="closeValentineModal()">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <!-- Gift Ribbons -->
+            <div class="ribbon-v"></div>
+            <div class="ribbon-h"></div>
+            <div class="ribbon-bow">
+                <div class="bow-left"></div>
+                <div class="bow-right"></div>
+                <div class="bow-center"></div>
+            </div>
+
+            <img src="assets/images/WhatsApp Image 2026-02-12 at 10.54.05 PM.jpeg" alt="Valentine's Special Offer"
+                class="w-full h-auto block">
+            <div class="absolute bottom-6 left-0 w-full text-center">
+                <a href="locations.html"
+                    class="inline-block bg-[#f37021] text-white px-10 py-4 rounded-full font-bold hover:bg-orange-600 transition shadow-2xl transform hover:scale-110 text-lg border-4 border-white">
+                    Get Details / Buy Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/valentines.js"></script>
 </body>
-
-<!-- Floating Call Button -->
-<div class="fixed bottom-0 left-0 m-4 z-40 animate-bounce-slow">
-    <a href="tel:+94761185956" class="flex items-center group">
-        <div
-            class="bg-green-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-green-600 transition-all duration-300 transform group-hover:scale-110 relative">
-            <i class="fas fa-phone-alt text-xl"></i>
-            <span
-                class="absolute left-full ml-3 bg-white text-green-600 px-3 py-1 rounded-lg shadow-md font-bold text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-green-100">
-                More info? Contact Us
-            </span>
-        </div>
-    </a>
-</div>
-
-
-<!-- Barista Discount Promo Banner -->
-<div class="fixed bottom-0 right-0 m-4 z-40 promo-banner max-w-sm w-full">
-    <a href="locations.html" class="block">
-        <div
-            class="banner-orange rounded-2xl shadow-2xl p-5 flex items-center transform transition hover:scale-105 cursor-pointer border-4 border-white animate-pulse-glow">
-            <div class="flex-shrink-0 bg-white rounded-full p-4 shadow-lg">
-                <i class="fas fa-gift text-3xl text-[#f37021]"></i>
-            </div>
-            <div class="ml-5">
-                <h3 class="text-white font-extrabold text-xl leading-tight">MEGA DISCOUNT!</h3>
-                <div class="flex items-center space-x-2">
-                    <span class="text-white/70 line-through text-sm">6000 LKR</span>
-                    <span class="shimmer-text text-2xl font-black italic">5000 LKR</span>
-                </div>
-                <p class="text-white text-xs mt-1 font-medium opacity-90 underline">Exclusive at Barista Outlets</p>
-            </div>
-            <div class="ml-auto">
-                <div class="bg-white/20 p-2 rounded-full">
-                    <i class="fas fa-arrow-right text-white"></i>
-                </div>
-            </div>
-        </div>
-    </a>
-</div>
 
 </html>
