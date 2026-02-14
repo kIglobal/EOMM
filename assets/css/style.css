@@ -67,6 +67,40 @@
     }
 }
 
+
 .animate-bounce-slow {
     animation: bounce-slow 3s ease-in-out infinite;
+}
+
+/* Barista Promo styles */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 0px rgba(243, 112, 33, 0);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(243, 112, 33, 0.6);
+    }
+}
+
+.banner-orange {
+    background: linear-gradient(135deg, #f37021 0%, #ff8e4a 100%);
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 3s infinite;
+}
+
+.shimmer-text {
+    background: linear-gradient(90deg, #fff 0%, #ffe0cc 50%, #fff 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
 }

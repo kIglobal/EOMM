@@ -42,9 +42,9 @@
                         <a href="locations.html"
                             class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Store
                             Locations</a>
-                        <a href="order.html"
-                            class="bg-primary hover:bg-purple-900 text-white px-5 py-2 rounded-full text-sm font-medium transition shadow-lg">Regular
-                            Buy</a>
+                        <a href="locations.html"
+                            class="bg-primary hover:bg-purple-900 text-white px-5 py-2 rounded-full text-sm font-medium transition shadow-lg">Store
+                            Locations</a>
                     </div>
                 </div>
             </div>
@@ -54,107 +54,35 @@
     <!-- Main Content -->
     <div class="flex-grow pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto">
-            <div class="bg-white shadow-2xl rounded-2xl overflow-hidden border-2 border-orange-500">
-                <!-- Header -->
-                <div class="bg-gradient-to-r from-orange-500 to-orange-600 px-8 py-6 relative overflow-hidden">
+            <div class="bg-white shadow-2xl rounded-2xl overflow-hidden text-center border-2 border-orange-500">
+                <div class="bg-gradient-to-r from-orange-500 to-orange-600 px-8 py-10 relative overflow-hidden">
                     <div class="absolute -right-6 -top-6 text-white opacity-20 transform rotate-12">
                         <i class="fas fa-graduation-cap text-9xl"></i>
                     </div>
-                    <div class="relative z-10">
-                        <span
-                            class="inline-block bg-white text-orange-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-2">Student
-                            Exclusively</span>
-                        <h2 class="text-3xl font-bold text-white">Get Your 1000LKR Discount!</h2>
-                        <p class="text-white text-2xl font-bold mt-2">Student Price: 5000 LKR</p>
-                        <p class="text-white opacity-90 mt-1">Verify your student status to claim this special offer.
-                        </p>
-                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10">Attention Students</h2>
+                    <p class="text-white opacity-90 text-lg md:text-xl max-w-xl mx-auto relative z-10">
+                        The online student offer portal is currently closed.
+                        Please visit any <strong>Barista Sri Lanka</strong> outlet to purchase your copy of
+                        <strong>Essentials of Modern Marketing</strong>.
+                    </p>
                 </div>
 
-                <form id="studentOrderForm" class="px-8 py-8 space-y-6">
-                    <!-- Student Name -->
-                    <div>
-                        <label for="studentName" class="block text-sm font-medium text-gray-700">Full Name</label>
-                        <div class="mt-1 relative rounded-md shadow-sm">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-user text-gray-400"></i>
-                            </div>
-                            <input type="text" name="studentName" id="studentName" required
-                                class="focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-3"
-                                placeholder="Student Name">
-                        </div>
+                <div class="px-8 py-12">
+                    <p class="text-gray-600 mb-8 text-lg">
+                        You can find the book at all Barista locations island-wide. Don't forget to take your student ID
+                        with you for any in-store inquiries.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="locations.html"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition shadow-lg transform hover:-translate-y-1">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Find Nearest Outlet
+                        </a>
+                        <a href="index.html"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-orange-50 text-orange-600 rounded-xl font-bold hover:bg-orange-100 transition">
+                            Back to Home
+                        </a>
                     </div>
-
-                    <!-- University Name -->
-                    <div>
-                        <label for="university" class="block text-sm font-medium text-gray-700">University /
-                            Institute</label>
-                        <div class="mt-1 relative rounded-md shadow-sm">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-university text-gray-400"></i>
-                            </div>
-                            <input type="text" name="university" id="university" required
-                                class="focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-3"
-                                placeholder="Reference University/Institute">
-                        </div>
-                    </div>
-
-                    <!-- Student ID -->
-                    <div>
-                        <label for="studentId" class="block text-sm font-medium text-gray-700">Student ID Number</label>
-                        <div class="mt-1 relative rounded-md shadow-sm">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-id-card text-gray-400"></i>
-                            </div>
-                            <input type="text" name="studentId" id="studentId" required
-                                class="focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-3"
-                                placeholder="ID Number">
-                        </div>
-                    </div>
-
-                    <!-- Mobile -->
-                    <div>
-                        <label for="studentMobile" class="block text-sm font-medium text-gray-700">Mobile Number</label>
-                        <div class="mt-1 relative rounded-md shadow-sm">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-phone text-gray-400"></i>
-                            </div>
-                            <input type="tel" name="studentMobile" id="studentMobile" required
-                                class="focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-3"
-                                placeholder="+94 7X XXX XXXX">
-                        </div>
-                    </div>
-
-                    <!-- Payment Slip Upload -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Upload Payment Slip (Discounted
-                            Rate)</label>
-                        <div class="flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md hover:border-orange-500 transition cursor-pointer"
-                            id="drop-area">
-                            <div class="space-y-1 text-center">
-                                <i class="fas fa-file-upload text-4xl text-gray-400 mb-3"></i>
-                                <div class="flex text-sm text-gray-600 justify-center">
-                                    <label for="student-file-upload"
-                                        class="relative cursor-pointer bg-white rounded-md font-medium text-orange-600 hover:text-orange-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-orange-500">
-                                        <span>Upload Slip</span>
-                                        <input id="student-file-upload" name="file-upload" type="file" class="sr-only"
-                                            required accept="image/*,.pdf">
-                                    </label>
-                                    <p class="pl-1">or drag and drop</p>
-                                </div>
-                                <p id="student-file-name" class="text-sm text-green-600 mt-2 font-semibold hidden"></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div>
-                        <button type="submit"
-                            class="w-full flex justify-center py-4 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition transform hover:-translate-y-1 shadow-lg">
-                            Submit Student Order
-                        </button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>

@@ -62,14 +62,11 @@
                         <a href="index.html"
                             class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
                         <a href="locations.html"
-                            class="text-primary font-bold px-3 py-2 rounded-md text-sm transition font-bold">Store
+                            class="text-primary font-bold px-3 py-2 rounded-md text-sm transition">Store
                             Locations</a>
-                        <a href="student_offer.html"
-                            class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Student
-                            Offer</a>
-                        <a href="order.html"
-                            class="bg-primary hover:bg-orange-600 text-white px-6 py-2.5 rounded-full text-sm font-bold transition shadow-lg transform hover:scale-105">Buy
-                            Now</a>
+                        <a href="#about"
+                            class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">About
+                            Book</a>
                     </div>
                 </div>
                 <div class="-mr-2 flex md:hidden">
@@ -93,13 +90,37 @@
             <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Our Retail Partner</h1>
             <p class="text-xl md:text-2xl text-orange-50 max-w-3xl mx-auto font-light leading-relaxed">
                 We' ve teamed up with Sri Lanka's leading coffee chain. Find your physical copy of EOMM at over 75
-                Barista outlets island nwide. </p>
+                Barista outlets island-wide.
+            </p>
+            <div class="mt-8 flex justify-center">
+                <div
+                    class="inline-flex flex-col md:flex-row items-center bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-3xl shadow-2xl animate-fade-in">
+                    <div class="flex items-center mb-2 md:mb-0 md:mr-6">
+                        <span
+                            class="bg-white text-[#f37021] px-3 py-1 rounded-full text-xs font-black mr-3 uppercase tracking-tighter">Big
+                            Savings</span>
+                        <span class="text-white text-3xl font-black italic">
+                            <span class="line-through text-orange-200/50 text-xl mr-2">6000 LKR</span>
+                            5000 LKR
+                        </span>
+                    </div>
+                    <div class="h-px w-12 bg-white/30 md:h-8 md:w-px md:mx-4 hidden md:block"></div>
+                    <span class="text-orange-50 font-bold text-center md:text-left">Get your discount at any Barista
+                        outlet island-wide!</span>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Search Section -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
-        <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-10 border border-purple-100 mb-12">
+        <div
+            class="bg-white rounded-2xl shadow-2xl p-6 md:p-10 border border-orange-100 mb-12 relative overflow-hidden">
+            <!-- Decorative discount badge for search box -->
+            <div
+                class="absolute -right-12 -top-12 w-32 h-32 bg-orange-500 rotate-45 flex items-end justify-center pb-2">
+                <span class="text-white font-black text-xs">SAVE 1000</span>
+            </div>
             <div class="flex flex-col md:flex-row gap-4 items-center">
                 <div class="relative flex-1 w-full">
                     <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
@@ -129,27 +150,76 @@
             { name: 'Bandaranaike International Airport', address: 'C Shop #66/D, Katunayake', map: 'https://maps.app.goo.gl/3BG5hZTsZppCXnVTA' },
             { name: 'Bandarawela – Express', address: '7 Cargills Square, Welimada Rd, Bandarawela', map: 'https://maps.app.goo.gl/Wmv7YDMmCU88deYg6' },
             { name: 'Battaramulla', address: '16/2A Main St, Battaramulla 10120', map: 'https://maps.app.goo.gl/YDuQfaGR5HoRBRtUA' },
+            { name: 'BIA-KIOSK', address: 'Transit Area, BIA, Katunayake 11450', map: 'https://maps.app.goo.gl/LJ8u36hwoXcmjqAA7' },
             { name: 'Boralesgamuwa', address: '129/2 90, Katuwawala Road, Boralesgamuwa', map: 'https://maps.app.goo.gl/NFB4U9BYvLoMcn2DA' },
             { name: 'Café Mocha by Barista', address: '28, Stafford Avenue, Colombo 06', map: 'https://maps.app.goo.gl/zZurDVT5pFyth36SA' },
             { name: 'Cool Planet Narahenpita', address: 'No.193, Kirula Road, Colombo 05', map: 'https://maps.app.goo.gl/ZFbHmkoCd9gpuu4R8' },
-            { name: 'Kurunegala', address: 'PWDR Cafe (pvt). Ltd, Yaggapitiya, Dambulla Rd', map: 'https://maps.app.goo.gl/UsBa7q5sbb8inG4e6' },
+            { name: 'Dambulla Road, Kurunegala', address: 'PWDR Cafe (pvt). Ltd, Yaggapitiya, Dambulla Rd', map: 'https://maps.app.goo.gl/UsBa7q5sbb8inG4e6' },
             { name: 'Dehiwala', address: '35, Hill Street, Dehiwala', map: 'https://maps.app.goo.gl/dxnux9urve7mzcZM9' },
             { name: 'Delkanda', address: 'No 601, Delkanda, Nugegoda 10250', map: 'https://maps.app.goo.gl/bpxVP44AyEb6aPEKA' },
             { name: 'Double XL', address: 'Dbl XL, No 108, Reid Avenue, Colombo 7', map: 'https://maps.app.goo.gl/Z9qk1JXWSNNXo4v77' },
             { name: 'Ella', address: 'No.01, Ella Junction, Ella', map: 'https://maps.app.goo.gl/HBjb9WCsfR2gza43A' },
             { name: 'Ethul Kotte', address: '932/A Kotte Rd, Sri Jayawardenepura, Kotte', map: 'https://maps.app.goo.gl/Z5eSp2fPXF3mXm6j9' },
             { name: 'Galle Fort', address: 'No. 53, Pedler’s Street, Galle Fort', map: 'https://maps.app.goo.gl/dczAp7ZToVCUvFq99' },
+            { name: 'Galle Matara Rd', address: '111 Old Matara Rd, Galle 80000', map: 'https://maps.app.goo.gl/DaAzmepBrjAcS2Mv8' },
             { name: 'Horana', address: 'No. 249/A/A, Ground Floor, Ratnapura', map: 'https://maps.app.goo.gl/KSPspp9fHLv7qjZG6' },
-            { name: 'Horton Place', address: 'Alexandra Pl, Colombo 7 (Lanka IOC Station)', map: 'https://maps.app.goo.gl/g42Wt3YepYfNr1vq5' },
+            { name: 'Horton Place', address: 'Lanka IOC Station, 75 Alexandra Pl, Colombo 7', map: 'https://maps.app.goo.gl/g42Wt3YepYfNr1vq5' },
             { name: 'Independence Arcade', address: 'No. CT/GF/3A, Arcade Square, Colombo 07', map: 'https://maps.app.goo.gl/2BKqoKftz9b5ZBDW7' },
             { name: 'Ja-Ela', address: '118 Negombo Rd, Ja-Ela', map: 'https://maps.app.goo.gl/K3M91YgaWQ5uXKS56' },
             { name: 'Jaffna Express', address: 'No 420, Hospital Road, Jaffna', map: 'https://maps.app.goo.gl/uEkv6ACvZH11UF16A' },
             { name: 'Kadawatha', address: '469B Kandy Rd, Kadawatha 11850', map: 'https://maps.app.goo.gl/kHtu4MmPwdtLjPBy7' },
             { name: 'Kandy', address: 'No 498, Peradeniya Road, Kandy', map: 'https://maps.app.goo.gl/CyMwxEkCZuUb9deD9' },
+            { name: 'Kandy City', address: '05 E L Senanayake Veediya, Kandy 20000', map: 'https://maps.app.goo.gl/BAqLWeDt8A7LGf7G9' },
             { name: 'Katubedda', address: '239 Galle Rd, Moratuwa', map: 'https://maps.app.goo.gl/a9noiR8gjXEH1fwH6' },
+            { name: 'Kelly Felder – Wattala', address: '811 Negombo Rd, Wattala', map: 'https://maps.app.goo.gl/hsPjSxfaVUEn3GmB8' },
             { name: 'Kiribathgoda', address: 'No 91, Ground Floor, Kandy Road', map: 'https://maps.app.goo.gl/n4Qr8b8WSmKEcY1u7' },
             { name: 'Kochchikade', address: 'No 63, Chilaw road, Kochchikade', map: 'https://maps.app.goo.gl/AoC86BEN6QQmHigr6' },
-            { name: 'Kohuwala', address: '129/2 Dutugemunu St, Colombo 10250', map: 'https://maps.app.goo.gl/AoC86BEN6QQmHigr6' }
+            { name: 'Kohuwala', address: '129/2 Dutugemunu St, Colombo 10250', map: 'https://maps.app.goo.gl/fdRXRC7BeZNzEbVK6' },
+            { name: 'Kollupitiya', address: 'No. 213 Galle Rd, Colombo 00300', map: 'https://maps.app.goo.gl/2kFSt3NDcEMykPtP7' },
+            { name: 'Kottawa', address: '292, 1 High Level Rd, Pannipitiya', map: 'https://maps.app.goo.gl/LhRW44QYk3VGSPQ3A' },
+            { name: 'Kurunegala', address: 'First floor, 61, Baudhaloka Mawatha, Kurunegala', map: 'https://maps.app.goo.gl/kubkrgSY2DTPUsvr8' },
+            { name: 'Lady J', address: 'Barista, 993 Maradana Rd, Colombo 01000', map: 'https://maps.app.goo.gl/kAfcxn2ZtMoX3BcZ7' },
+            { name: 'Maharagama – Express', address: 'No. 171, Colombo Road, Maharagama', map: 'https://maps.app.goo.gl/xSS4tvxTKJm2e3Ap7' },
+            { name: 'Malabe', address: '390, Kaduwela Road, Malabe', map: 'https://maps.app.goo.gl/MXrnTKz8wLTbBzWg8' },
+            { name: 'Matara', address: 'No.7B, Beach Road, Matara', map: 'https://maps.app.goo.gl/EBtt6mUSiW5xbStp7' },
+            { name: 'Mirihana', address: '266 Old Kottawa Rd, Nugegoda 10250', map: 'https://maps.app.goo.gl/Yse3G6TFvHhBaA9U8' },
+            { name: 'Mirissa', address: 'Sri Ramya, Galle Road, Mirissa', map: 'https://maps.app.goo.gl/zmr1HLGGaqCWXUDcA' },
+            { name: 'Moratuwa', address: '11 Galle Rd New Deviation, Moratuwa 10400', map: 'https://maps.app.goo.gl/hXDgp4GM19iyYwzo7' },
+            { name: 'Mount Lavinia', address: '198, Galle Road, Mount Lavinia', map: 'https://maps.app.goo.gl/xafwpvvRE4zxncsh7' },
+            { name: 'Mulleriyawa', address: 'No 313, 10 Avissawella Rd, Mulleriyawa', map: 'https://maps.app.goo.gl/gHVRERZDReM8C67b8' },
+            { name: 'Narahenpita', address: 'No 570/1, Elvitigala Mawatha, Narahenpita', map: 'https://maps.app.goo.gl/XBmmEUHCYWa6uJGi9' },
+            { name: 'Nawala', address: '446 Nawala Rd, Sri Jayewardenepura Kotte', map: 'https://maps.app.goo.gl/Gp14F1aRAXPwsyHx6' },
+            { name: 'Nawam Mawatha', address: '48, IBM Building, Nawam Mawatha, Colombo 00200', map: 'https://maps.app.goo.gl/fDT2NEqngb9ao7gu8' },
+            { name: 'Negombo', address: '631, Colombo Road, Negombo', map: 'https://maps.app.goo.gl/auph9JNHg91H52d68' },
+            { name: 'Nugegoda', address: 'No. 117, Pagoda road, Nugegoda', map: 'https://maps.app.goo.gl/irMzuAr1QxADhX66A' },
+            { name: 'Nugegoda – Express', address: '27, S De S Jayasinghe Mawatha, Nugegoda', map: 'https://maps.app.goo.gl/AvY6JjMgp5n9SC7t9' },
+            { name: 'Nuwara Eliya', address: 'Greenways, Badulla Road, Nuwara Eliya', map: 'https://maps.app.goo.gl/DLDrKMkqqKfkpX7k7' },
+            { name: 'Orion City', address: 'No.752 Dr Danister De Silva Mawatha, Colombo 09', map: 'https://maps.app.goo.gl/fhYwjwQz9vkaU6XF7' },
+            { name: 'Panadura', address: '455 A2, Panadura', map: 'https://maps.app.goo.gl/rnwU4iHW5BRXLq3Q8' },
+            { name: 'Pasyala', address: 'No, 136/B, Kandy Road, Kalalpitiya, Pasyala', map: 'https://maps.app.goo.gl/v836h7kM7gbtWmdi6' },
+            { name: 'Pepiliyana', address: 'Colombo road, Pepiliyana – Dehiwela Rd', map: 'https://maps.app.goo.gl/Yt6KzdAqsWXS7RTJ6' },
+            { name: 'Perahera Mawatha', address: '181, Sir James Peiris Mawatha, Colombo 02', map: 'https://maps.app.goo.gl/5TEr6pYtUX1cCaKq5' },
+            { name: 'Piliyandala', address: 'No 188,Colombo Road, Mampe', map: 'https://maps.app.goo.gl/u3XMwVG6HiyDSPsm7' },
+            { name: 'Rajagiriya', address: 'No 55 A, Buthgamuwa Road, Rajagiriya', map: 'https://maps.app.goo.gl/Fc1e6FtqUTTN6Fav8' },
+            { name: 'Seeduwa', address: 'No. 444, Seeduwa village, Colombo road', map: 'https://maps.app.goo.gl/buS1KGWMuFZXjdJX8' },
+            { name: 'Shanthipura', address: 'Eagle’s View Point, Nuwara Eliya 22200', map: 'https://maps.app.goo.gl/b3WXwNhDBkF5tQg49' },
+            { name: 'Sigiriya', address: '121/A, Main Road, Sigiriya', map: 'https://maps.app.goo.gl/RfLu6mhwGVmxYDoD7' },
+            { name: 'Southern Highway A', address: 'Service Area A', map: 'https://maps.app.goo.gl/JiEhAs7unVDqL7ig9' },
+            { name: 'Southern Highway B', address: 'Service Area B, Welipenna', map: 'https://maps.app.goo.gl/MVDrFXGyoU8F3EYN8' },
+            { name: 'Staple Street Lakarcade', address: '33 Staple St, Colombo 02', map: 'https://maps.app.goo.gl/CNAvosDbj7pJPpL1A' },
+            { name: 'Thalawathugoda', address: 'No.1136/B/5, Pannipitiya Road, Thalawathugoda', map: 'https://maps.app.goo.gl/sGdGmtWWVR1MH543A' },
+            { name: 'Thimbirigasyaya – Express', address: 'No 61, Isipathana Mawatha, Colombo 05', map: 'https://maps.app.goo.gl/DeNzqHWEpDvXM3B16' },
+            { name: 'Thummulla, Laksala', address: 'Laksala Building #7, Reid Mawatha', map: 'https://maps.app.goo.gl/SxyeoXiBCEQcCUuu7' },
+            { name: 'Trillium', address: 'Trillium Hotel Colombo, No. 210 Torrington Ave', map: 'https://maps.app.goo.gl/ivHAcHE8tVxwVnf37' },
+            { name: 'Udawalawa', address: 'C.P.D De Silva Rd, Udawalawa 70190', map: 'https://maps.app.goo.gl/xidA5QYPzS2mgQrE9' },
+            { name: 'Unawatuna', address: '184, Welledewala Junction, Galle', map: 'https://maps.app.goo.gl/5eMLbRsSBGQEzGUBA' },
+            { name: 'Wattala', address: 'No.542 A, Negombo road, Wattala', map: 'https://maps.app.goo.gl/KSqTNQsyQV7rzYUZ8' },
+            { name: 'Wattala 2', address: '811 Negombo Rd, Wattala', map: 'https://maps.app.goo.gl/1XtNvaJWpRydi7eZ9' },
+            { name: 'Wellawatte', address: 'No 519 Galle Rd, Colombo 00600', map: 'https://maps.app.goo.gl/L7K5b3BFwVLQtVnD8' },
+            { name: 'Wennappuwa', address: 'No 5 Main Street, Wennappuwa 61170', map: 'https://maps.app.goo.gl/vFkxzG1gJkvyEKAA7' },
+            { name: 'World Trade Center', address: 'Level 3, World Trade Centre, Colombo 01', map: 'https://maps.app.goo.gl/jhpChqbu2PnpPDft9' },
+            { name: 'WSO2', address: 'No105 Bauddhaloka Road, Colombo 00400', map: 'https://maps.app.goo.gl/QMHGphKysaUQXGdcA' },
+            { name: 'Yakkala', address: '264, Henpitimulla Kandy Rd, Yakkala', map: 'https://maps.app.goo.gl/9nfryMqY6fndAFiC8' }
         ];
 
         function renderLocations(filter = '') {
@@ -163,7 +233,7 @@
 
             filtered.forEach(loc => {
                 grid.innerHTML += `
-                    <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-500 overflow-hidden border border-gray-100 flex flex-col group">
+                    <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-500 overflow-hidden border border-gray-100 flex flex-col group animate-fade-in">
                         <div class="p-6 flex-1">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-primary mr-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
@@ -171,7 +241,7 @@
                                 </div>
                                 <h3 class="font-bold text-xl text-gray-900 group-hover:text-primary transition-colors">${loc.name}</h3>
                             </div>
-                            <p class="text-gray-500 mb-6 flex items-start">
+                            <p class="text-gray-500 mb-6 flex items-start line-clamp-2">
                                 <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
                                 <span>${loc.address}</span>
                             </p>
@@ -214,7 +284,6 @@
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="index.html" class="hover:text-white">Home</a></li>
                         <li><a href="locations.html" class="hover:text-white font-bold">Store Locations</a></li>
-                        <li><a href="order.html" class="hover:text-white">Order Online</a></li>
                     </ul>
                 </div>
                 <div>
