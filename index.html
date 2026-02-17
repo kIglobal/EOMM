@@ -40,6 +40,9 @@
                         <a href="locations.html"
                             class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Store
                             Locations</a>
+                        <a href="news.html"
+                            class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition italic font-bold">Media
+                            Coverage</a>
                         <a href="#about"
                             class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">About
                             Book</a>
@@ -107,6 +110,71 @@
                                 onerror="this.onerror=null;this.src='assets/images/book.svg';">
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Spotlight Section - Prominently featured for maximum visibility -->
+    <section class="py-12 bg-white border-y border-gray-100 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <!-- Media Outlet Logo/ID -->
+                <div class="flex-shrink-0 flex flex-col items-center md:items-start">
+                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-2">As Seen On</span>
+                    <h3 class="text-3xl font-black text-gray-900 flex items-center">
+                        <span class="bg-gray-900 text-white px-3 py-1 mr-1">DAILY</span> <span
+                            class="text-gray-900 italic">FT</span>
+                    </h3>
+                </div>
+
+                <!-- Vertical Divider -->
+                <div class="hidden md:block w-px h-16 bg-gray-200"></div>
+
+                <!-- Article Hook -->
+                <div class="flex-grow text-center md:text-left">
+                    <h4 class="text-lg md:text-xl font-bold text-gray-800 leading-tight">
+                        "Launch of ‘Essentials of Modern Marketing’ <span class="bg-purple-100 text-primary px-2">Sri
+                            Lanka edition</span> celebrates local brands"
+                    </h4>
+                    <p class="text-sm text-gray-500 mt-2 font-medium">Read why the Daily FT calls this a significant
+                        milestone for local brands.</p>
+                </div>
+
+                <!-- Primary Action -->
+                <div class="flex-shrink-0">
+                    <a href="news.html"
+                        class="inline-flex items-center group bg-primary hover:bg-purple-900 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-primary/20 transition-all transform hover:-translate-y-1">
+                        Read Story
+                        <span
+                            class="ml-3 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/40 transition">
+                            <i class="fas fa-chevron-right text-xs"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Key Facts Slider (Small icons) -->
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-gray-100 pt-8">
+                <div class="flex items-center justify-center md:justify-start">
+                    <i class="fas fa-certificate text-primary mr-3 text-lg opacity-50"></i>
+                    <span class="text-[11px] font-bold text-gray-500 uppercase tracking-widest">1st Nation in
+                        Series</span>
+                </div>
+                <div class="flex items-center justify-center md:justify-start">
+                    <i class="fas fa-star text-primary mr-3 text-lg opacity-50"></i>
+                    <span class="text-[11px] font-bold text-gray-500 uppercase tracking-widest">20+ Success
+                        Stories</span>
+                </div>
+                <div class="flex items-center justify-center md:justify-start">
+                    <i class="fas fa-award text-primary mr-3 text-lg opacity-50"></i>
+                    <span class="text-[11px] font-bold text-gray-500 uppercase tracking-widest">Official Kotler
+                        Impact</span>
+                </div>
+                <div class="flex items-center justify-center md:justify-start">
+                    <i class="fas fa-globe-asia text-primary mr-3 text-lg opacity-50"></i>
+                    <span class="text-[11px] font-bold text-gray-500 uppercase tracking-widest">Global
+                        Recognition</span>
                 </div>
             </div>
         </div>
@@ -266,6 +334,7 @@
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="news.html" class="hover:text-white">Media Coverage</a></li>
                         <li><a href="#about" class="hover:text-white">About</a></li>
                         <li><a href="locations.html" class="hover:text-white">Store Locations</a></li>
                     </ul>
@@ -323,34 +392,9 @@
         </a>
     </div>
 
-    <!-- Valentine Modal Overlay -->
-    <div id="valentineModal" class="valentine-modal-overlay">
-        <div class="valentine-modal-content">
-            <div class="close-valentine" onclick="closeValentineModal()">
-                <i class="fas fa-times"></i>
-            </div>
 
-            <!-- Gift Ribbons -->
-            <div class="ribbon-v"></div>
-            <div class="ribbon-h"></div>
-            <div class="ribbon-bow">
-                <div class="bow-left"></div>
-                <div class="bow-right"></div>
-                <div class="bow-center"></div>
-            </div>
 
-            <img src="assets/images/WhatsApp Image 2026-02-12 at 10.54.05 PM.jpeg" alt="Valentine's Special Offer"
-                class="w-full h-auto block">
-            <div class="absolute bottom-6 left-0 w-full text-center">
-                <a href="locations.html"
-                    class="inline-block bg-[#f37021] text-white px-10 py-4 rounded-full font-bold hover:bg-orange-600 transition shadow-2xl transform hover:scale-110 text-lg border-4 border-white">
-                    Get Details / Buy Now
-                </a>
-            </div>
-        </div>
-    </div>
 
-    <script src="assets/js/valentines.js"></script>
 </body>
 
 </html>
